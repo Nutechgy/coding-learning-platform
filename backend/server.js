@@ -6,12 +6,7 @@ const postsRouter = require('./routes/posts');
 const port = 3000; // You can change this to any port you prefer/
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.error(err));
+mongoose.connect(process.env.MONGODB_URI) ;
 
 
 // Middleware to parse JSON bodies
