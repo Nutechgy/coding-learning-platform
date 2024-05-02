@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React from 'react';
 
 function App() {
   return (
@@ -18,8 +18,29 @@ function App() {
           Learn React
         </a>
       </header>
+      <Navigation />
+      {/* Content will go here */}
+      <Footer />
     </div>
   );
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
