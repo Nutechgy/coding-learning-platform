@@ -1,9 +1,13 @@
-
 import React from 'react';
+import MatrixBackground from './MatrixBackground';
+import Header from './Header';
+import Navigation from './Navigation';
+import Footer from './Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <MatrixBackground />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -26,6 +30,7 @@ function App() {
 }
 
 export default App;
+
 
 
 

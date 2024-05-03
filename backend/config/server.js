@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const usersRouter = require('./routes/users');
-const postsRouter = require('./routes/posts');
+const usersRouter = require('../routes/users');
+const postsRouter = require('../routes/posts');
+const connection = require('./config/connection');
 const port = 3000; // You can change this to any port you prefer/
 
 // Connect to MongoDB
