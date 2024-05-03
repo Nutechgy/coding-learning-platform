@@ -1,14 +1,9 @@
 const express = require('express');
 const app = express();
+const connection = require('./config/connection');
 const mongoose = require('mongoose');
 const usersRouter = require('../routes/users');
 const postsRouter = require('../routes/posts');
-const connection = require('./config/connection');
-const port = 3000; // You can change this to any port you prefer/
-
-// Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI) ;
-
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -27,8 +22,16 @@ app.use((err, req, res, next) => {
 app.get('/', (req, res) => {
   res.send('Hello, world!');
 });
-
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Connected to MongoDB');
+    // Start the server
+    const port = process.env.PORT || 3000;
+    app.listen(port, () => {
+      console.log(`Server is running on http://localhost:${port}`);
+    });
+  })
+  .catch(error => {
+    console.error('Error connecting to MongoDB:', error);
+  });
