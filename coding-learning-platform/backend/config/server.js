@@ -1,18 +1,17 @@
 const express = require('express');
 const app = express();
-const connection = require('./config/connection');
 const mongoose = require('mongoose');
-const usersRouter = require('./routes/users');
-const postsRouter = require('./routes/posts');
+const usersRouter = require('../routes/users');
+const postsRouter = require('../routes/posts');
 
 // Middleware to parse JSON bodies
 app.use(express.json());
 
-//Routes
+// Routes
 app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
 
-//Error handling middleware
+// Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something broke!');
@@ -22,6 +21,7 @@ app.use((err, req, res, next) => {
 app.get('/', (req, res) => {
   res.send('Hello, world!');
 });
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
