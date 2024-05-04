@@ -1,0 +1,26 @@
+{
+    "database": {
+      "url": "mongodb://localhost:27017/code-learning-platform",
+      "username": "admin",
+      "password": "password"
+    },
+    "apiKeys": {
+      "google": "YOUR_GOOGLE_API_KEY",
+      "github": "YOUR_GITHUB_API_KEY"
+    },
+    "auth": {
+      "jwtSecret": "YOUR_JWT_SECRET_KEY"
+    },
+    "email": {
+      "smtpServer": "smtp.example.com",
+      "port": 587,
+      "username": "example@example.com",
+      "password": "email_password"
+    },
+    "otherSettings": {
+      "debugMode": true,
+      "logLevel": "debug",
+      "maxUploadSize": "50MB"
+    }
+  }
+  

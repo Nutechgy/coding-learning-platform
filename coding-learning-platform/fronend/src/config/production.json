@@ -1,0 +1,26 @@
+{
+    "database": {
+      "url": "YOUR_PRODUCTION_DATABASE_URL",
+      "username": "YOUR_DATABASE_USERNAME",
+      "password": "YOUR_DATABASE_PASSWORD"
+    },
+    "apiKeys": {
+      "google": "YOUR_PRODUCTION_GOOGLE_API_KEY",
+      "github": "YOUR_PRODUCTION_GITHUB_API_KEY"
+    },
+    "auth": {
+      "jwtSecret": "YOUR_PRODUCTION_JWT_SECRET_KEY"
+    },
+    "email": {
+      "smtpServer": "YOUR_PRODUCTION_SMTP_SERVER",
+      "port": 587,
+      "username": "YOUR_EMAIL_USERNAME",
+      "password": "YOUR_EMAIL_PASSWORD"
+    },
+    "otherSettings": {
+      "debugMode": false,
+      "logLevel": "info",
+      "maxUploadSize": "100MB"
+    }
+  }
+  

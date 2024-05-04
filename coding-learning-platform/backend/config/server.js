@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const connection = require('./config/connection');
 const mongoose = require('mongoose');
-const usersRouter = require('../routes/users');
-const postsRouter = require('../routes/posts');
+const usersRouter = require('./routes/users');
+const postsRouter = require('./routes/posts');
 
 // Middleware to parse JSON bodies
 app.use(express.json());
